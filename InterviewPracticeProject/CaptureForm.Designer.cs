@@ -39,6 +39,7 @@
             this.cbx_showQuestion = new System.Windows.Forms.CheckBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btn_backToMainMenu = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.gbx_displayInterviewerOrSelf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -156,6 +157,11 @@
             this.btn_backToMainMenu.UseVisualStyleBackColor = true;
             this.btn_backToMainMenu.Click += new System.EventHandler(this.btn_backToMainMenu_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // CaptureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,5 +201,6 @@
         private System.Windows.Forms.CheckBox cbx_showQuestion;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button btn_backToMainMenu;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

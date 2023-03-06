@@ -62,7 +62,7 @@ namespace InterviewPracticeProject
 
         private void btn_info_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Select Camera from drop down", "Information", MessageBoxButtons.OK);
+            MessageBox.Show("Select desired camera from the drop down menu and choose question type before clicking \"Begin\" to continue. \n Testing the camera beforehand is optional", "Information", MessageBoxButtons.OK);
         }
 
         private void btn_begin_Click(object sender, EventArgs e)
@@ -114,9 +114,12 @@ namespace InterviewPracticeProject
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(videoCaptureDevice.IsRunning == true)
+            if (videoCaptureDevice != null)
             {
-                videoCaptureDevice.Stop();
+                if (videoCaptureDevice.IsRunning == true)
+                {
+                    videoCaptureDevice.Stop();
+                }
             }
         }
 

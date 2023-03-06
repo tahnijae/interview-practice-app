@@ -119,6 +119,8 @@
             // 
             // tbx_displayQuestion
             // 
+            this.tbx_displayQuestion.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tbx_displayQuestion.Enabled = false;
             this.tbx_displayQuestion.Location = new System.Drawing.Point(154, 23);
             this.tbx_displayQuestion.Name = "tbx_displayQuestion";
             this.tbx_displayQuestion.Size = new System.Drawing.Size(356, 20);
@@ -170,6 +172,8 @@
             this.Controls.Add(this.gbx_displayInterviewerOrSelf);
             this.Name = "CaptureForm";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CaptureForm_FormClosed);
+            this.Load += new System.EventHandler(this.CaptureForm_Load);
             this.gbx_displayInterviewerOrSelf.ResumeLayout(false);
             this.gbx_displayInterviewerOrSelf.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -113,6 +113,7 @@
             // 
             // cbx_camera
             // 
+            this.cbx_camera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_camera.FormattingEnabled = true;
             this.cbx_camera.Location = new System.Drawing.Point(89, 26);
             this.cbx_camera.Name = "cbx_camera";

@@ -14,13 +14,15 @@ namespace InterviewPracticeProject
 {
     public partial class MainForm : Form
     {
+        FilterInfoCollection filterInfoCollection;
+        VideoCaptureDevice videoCaptureDevice;
+        string questionType;
+
         public MainForm()
         {
             InitializeComponent();
         }
 
-        FilterInfoCollection filterInfoCollection;
-        VideoCaptureDevice videoCaptureDevice;
         private void Form1_Load(object sender, EventArgs e)
         {
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -29,7 +31,7 @@ namespace InterviewPracticeProject
                 cbx_camera.Items.Add(filterInfo.Name);
             }
             cbx_camera.SelectedIndex = 0;
-            videoCaptureDevice = new VideoCaptureDevice();
+            
         }
 
         
@@ -60,11 +62,15 @@ namespace InterviewPracticeProject
 
         private void btn_info_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Select Camera from drop down", "Information", MessageBoxButtons.OK);
         }
 
         private void btn_begin_Click(object sender, EventArgs e)
         {
+            CaptureForm captureForm = new CaptureForm();
+            videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cbx_camera.SelectedIndex].MonikerString);
+            captureForm.inputSettings(filterInfoCollection, videoCaptureDevice, questionType);
+            captureForm.ShowDialog();
 
         }
 
